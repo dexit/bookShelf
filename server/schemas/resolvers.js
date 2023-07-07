@@ -16,9 +16,22 @@ const resolvers = {
         createUser: async (parent, { user: userInput }) => {
             const user = await User.create(userInput);
             const token = signToken(user);
-            return { token, user };
+            return { 
+                token,
+                 user
+             };
         },
         loginUser: async (parent, { email, password }) => {
+            const user = await User.findOne({ 
+                email 
+            });
+
+            if (!user) { throw new AuthenticationError("I cant agree or deny the existence of this email");    }
+            const passwordOk = await user.isCorrectPassword(password);
+            if (!passwordOk) { throw new AuthenticationError("Incorrect credentials");  }
+        
+            const token = signToken(user);
+            return { token, user };
         },
         saveBook: async (parent, { book }, context) => {
 
