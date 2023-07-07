@@ -1,28 +1,48 @@
 const { gql }     = require('apollo-server-express');
+
+
 const typeDefs = gql`
-type Auth {
-token: String!
-user: User
-},
-type User {
-    
-    _id: ID!
-},
-type Book {
-    _id: ID!
-},
-type BookInput {
-    bookId: ID!
-},
-type UserInput {
-    
-},
-type Query {
+                        type Auth {
+                                    token: String!
+                                    user: User
+                        },
+                        type User {
+                                    
+                                    _id: ID!
+                                    username: String!
+                                    email: String!
+                        },
+                        type Book {
+                                    _id: ID!
+                                    bookId: ID!
+                                    description: String!
+                                    authors: [String!]!
+                                    image: String!
+                                    link: String!
+                                    title: String!
+                        },
+                        type BookInput {
+                                        bookId: ID!
+                                        description: String!
+                                        authors: [String!]!
+                                        image: String!
+                                        link: String!
+                                        title: String!
 
-},
-type Mutation{
+                        },
+                        type UserInput {
+                                        username: String!
+                                        email: String!
+                                        password: String!
 
-}
+                        },
+                        type Query {
+                                        loggedIn: User!
+
+                        },
+                        type Mutation{
+
+                        }
 `;
 
 module.exports = typeDefs;
