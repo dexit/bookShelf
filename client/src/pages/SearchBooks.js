@@ -56,7 +56,10 @@ const SearchBooks = () => {
       setSearchedBooks(bookData);
       setSearchInput('');
       console.error(err);
+    } catch (err) {
+      console.error(err);
     }
+    
   };
 
   // create function to handle saving a book to our database
