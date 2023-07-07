@@ -37,13 +37,27 @@ const resolvers = {
             if (!context.user) { throw new AuthenticationError("You must be logged in"); }
             const userBookAdd = await User.findOneAndUpdate(
                     { _id: context.user_id},
-                     { $addToSet: { savedBooks: book } },
+                     { $addToSet: { 
+                        savedBooks: book 
+                        }
+                     },
                      { new: true, runValidators: true }
                 ); 
                 return userBookAdd;           
         },
         deleteBook: async (parent, { bookId }, context) => {
-
+            if (!context.user) { throw new AuthenticationError("You must be logged in"); }
+            const userBookPull = await User.findOneAndUpdate(
+                { _id: context.user_id},
+                 { $pull: { 
+                    savedBooks: {
+                        bookId: bookId
+                        }
+                     }
+                },
+                 { new: true}
+            ); 
+            return userBookPull;           
         },
 
     },
