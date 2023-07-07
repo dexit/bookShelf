@@ -30,12 +30,6 @@ const typeDefs = gql`
                                         title: String!
 
                         },
-                        type UserInput {
-                                        username: String!
-                                        email: String!
-                                        password: String!
-
-                        },
                         type Query {
                                         loggedIn: User!
 
