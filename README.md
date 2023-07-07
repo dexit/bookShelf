@@ -1,7 +1,7 @@
 
 # bookShelf - Google Book Search
 ## Table of Contents
-* [Description](#description) **/**  * [Video](#video)  **/** * [Links](#links)  **/**  * [Installation](#installation) **/** [Usage](#usage) **/** [How to Contribute](#how-to-contribute) **/** [Author](#author) **/** [Licence](#licence)
+[Description](#description) **/**  [Video](#video)  **/** [Links](#links)  **/**  [Installation](#installation) **/** [Usage](#usage) **/** [How to Contribute](#how-to-contribute) **/** [Author](#author) **/** [Licence](#licence)
 #
 ## Description
 MERN / GraphQL / Apollo app with Express backend and React frontend
