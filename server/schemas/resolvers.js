@@ -14,11 +14,11 @@ const resolvers = {
     },
     Mutation: {
         addUser: async (parent, { username, email, password }) => {
-          const user = await User.create(userInput);
+          const user = await User.create( { username, email, password });
           const token = signToken(user);
           return { token, user };
         },
-        loginUser: async (parent, { email, password }) => {
+        login: async (parent, { email, password }) => {
           const user = await User.findOne({ email });
     
           if (!user) {
@@ -41,7 +41,7 @@ const resolvers = {
           }
           const updatedUser = await User.findOneAndUpdate(
             { _id: context.user._id },
-            { $addToSet: { savedBooks: book } },
+            { $addToSet: { savedBooks: bookData } },
             { new: true, runValidators: true }
           );
           return updatedUser;
