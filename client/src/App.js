@@ -29,6 +29,7 @@ import { setContext } from '@apollo/client/link/context';
       });
 function App() {
   return (
+    <ApolloProvider client={client}>
     <Router>
       <>
         <Navbar />
@@ -41,6 +42,7 @@ function App() {
 
       </>
     </Router>
+    </ApolloProvider>
   );
 }
 
