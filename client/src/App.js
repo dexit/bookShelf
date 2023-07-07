@@ -13,12 +13,9 @@ function App() {
           
           <Route path='/' element={<SearchBooks />} />
           <Route path='/saved' element={<SavedBooks  />} />
+          <Route path='*' element={<h1 className='display-2'>Wrong page!</h1>} />
         </Routes>
-        <Switch>
-          
-         
-          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-        </Switch>
+
       </>
     </Router>
   );
