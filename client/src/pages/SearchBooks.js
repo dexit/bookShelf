@@ -90,7 +90,7 @@ const SearchBooks = () => {
 
   return (
     <>
-      <div className='text-light bg-dark pt-5'>
+      <div className="text-light bg-dark p-5">
         <Container>
           <h1>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
@@ -124,7 +124,7 @@ const SearchBooks = () => {
         <Row>
           {searchedBooks.map((book) => {
             return (
-              <Col md="4">
+              <Col key={book.bookId} md="4">
                 <Card key={book.bookId} border='dark'>
                   {book.image ? (
                     <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
@@ -147,7 +147,7 @@ const SearchBooks = () => {
                 </Card>
               </Col>
             );
-          })};
+          })}
         </Row>
       </Container>
     </>
@@ -155,5 +155,3 @@ const SearchBooks = () => {
 };
 
 export default SearchBooks;
-
-// 
