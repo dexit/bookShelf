@@ -144,7 +144,7 @@ const SearchBooks = () => {
                 </Card>
               </Col>
             );
-          })}
+          })};
         </Row>
       </Container>
     </>
@@ -152,3 +152,5 @@ const SearchBooks = () => {
 };
 
 export default SearchBooks;
+
+// 

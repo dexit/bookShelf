@@ -101,7 +101,7 @@ const SavedBooks = () => {
                 </Card>
               </Col>
             );
-          })}
+          })};
         </Row>
       </Container>
     </>
@@ -109,3 +109,4 @@ const SavedBooks = () => {
 };
 
 export default SavedBooks;
+
