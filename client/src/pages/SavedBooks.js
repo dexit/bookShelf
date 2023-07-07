@@ -48,6 +48,13 @@ const SavedBooks = () => {
         variables: { bookId: bookId },
       });
 
+      // upon success, remove book's id from localStorage
+      removeBookId(bookId);
+    
+      const updated = books.filter((book)=> book.bookId !== bookId);   
+     
+        
+      setBooks(updated)
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
