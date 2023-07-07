@@ -1,10 +1,11 @@
 
-![ezgif-1-ac65b38e04](https://github.com/dexit/bookShelf/assets/6205151/d0ba20af-9a39-493c-b1fe-b61293b934b1)
 # bookShelf
 
 ## Description
 MERN / GraphQL / Apollo app with Express backend and React frontend
 Deployed on Heroku using MongoDB from Mongo Atlas.
+
+![ezgif-1-ac65b38e04](https://github.com/dexit/bookShelf/assets/6205151/d0ba20af-9a39-493c-b1fe-b61293b934b1)
 
 ## Video
 https://github.com/dexit/bookShelf/assets/6205151/a649ecbd-fa8c-480c-aaf1-cda6f7ecd992
