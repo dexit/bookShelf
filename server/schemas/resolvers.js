@@ -61,4 +61,4 @@ const resolvers = {
         },
 
     },
-}
+};
