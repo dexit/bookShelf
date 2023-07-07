@@ -16,7 +16,7 @@ import { removeBookId } from '../utils/localStorage';
 
 
 const SavedBooks = () => {
-  const [userData, setUserData] = useState({});
+
 
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
@@ -75,21 +75,21 @@ const SavedBooks = () => {
 
   return (
     <>
-      <div fluid className='text-light bg-dark p-5'>
+      <div  className="text-light bg-dark p-5">
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
       </div>
       <Container>
-        <h2 className='pt-5'>
-          {userData.savedBooks.length
-            ? `Viewing ${userData.savedBooks.length} saved ${userData.savedBooks.length === 1 ? 'book' : 'books'}:`
+        <h2 id='counter' className='pt-5'>
+          {books?.length
+            ? `Viewing ${books?.length} saved ${books?.length === 1 ? 'book' : 'books'}:`
             : 'You have no saved books!'}
         </h2>
         <Row>
-          {userData.savedBooks.map((book) => {
+          {books?.map((book) => {
             return (
-              <Col md="4">
+              <Col id={book.bookId} key={book.bookId}md="4">
                 <Card key={book.bookId} border='dark'>
                   {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
                   <Card.Body>
@@ -103,7 +103,7 @@ const SavedBooks = () => {
                 </Card>
               </Col>
             );
-          })};
+          })}
         </Row>
       </Container>
     </>
@@ -111,4 +111,3 @@ const SavedBooks = () => {
 };
 
 export default SavedBooks;
-
