@@ -7,10 +7,13 @@ import {
   Col
 } from 'react-bootstrap';
 
-
-import  { LOGGED_IN } from '../utils/queries';
+/* The code is importing necessary dependencies and functions from various files and libraries. */
+import { useQuery, useMutation } from '@apollo/client';
+import  { GET_ME } from '../utils/queries'
+import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
+
 
 const SavedBooks = () => {
   const [userData, setUserData] = useState({});
