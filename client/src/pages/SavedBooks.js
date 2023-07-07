@@ -44,7 +44,9 @@ const SavedBooks = () => {
     }
 
     try {
-      const response = await deleteBook(bookId, token);
+      await removeBook({
+        variables: { bookId: bookId },
+      });
 
       if (!response.ok) {
         throw new Error('something went wrong!');
